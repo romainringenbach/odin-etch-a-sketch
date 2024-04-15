@@ -1,0 +1,29 @@
+@property --grid-gap {
+    syntax: "<length>";
+    inherits: false;
+    initial-value: 10px;
+}
+
+body {
+    padding: 0px;
+    margin: 0px;
+}
+
+.grid {
+    display: flex;
+    flex-wrap: wrap;
+    aspect-ratio: 1;
+    height: 100vh;
+    padding: 0px;
+    margin: 0px;
+    background-color: red;
+    gap: var(--grid-gap);
+}
+
+.grid-element {
+    height: calc((100vh - 15 * var(--grid-gap))/16);
+    aspect-ratio: 1;
+    padding: 0px;
+    margin: 0px;
+    background-color: blue;
+}
