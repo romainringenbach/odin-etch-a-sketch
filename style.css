@@ -1,40 +1,28 @@
-@property --grid-gap {
-    syntax: "<length>";
-    inherits: false;
-    initial-value: 2px;
-}
-
-@property --grid-height {
-    syntax: "<length>";
-    inherits: false;
-    initial-value: 90vh;
-}
-
 body {
     padding: 0px;
     margin: 0px;
     display: flex;
+    flex-direction: column;
     justify-content: center;
     align-items: center;
     height: 100vh;
+    gap: 20px;
 }
 
 .grid {
     display: flex;
     flex-wrap: wrap;
     aspect-ratio: 1;
-    height: var(--grid-height);
-    padding: var(--grid-gap);
     margin: 0px;
     background-color: black;
-    gap: var(--grid-gap);
-    justify-content: space-around;
+    box-sizing: border-box;
 }
 
 .grid-element {
-    height: calc((var(--grid-height) - 17 * var(--grid-gap))/16);
+    /* (var(--grid-size)+1) doesn't work, so we have to add an additional + var(--grid-gap) to make it size+1 times*/
     aspect-ratio: 1;
     padding: 0px;
     margin: 0px;
+    box-sizing: border-box;
     background-color: white;
 }
