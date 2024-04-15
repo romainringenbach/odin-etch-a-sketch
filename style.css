@@ -1,29 +1,40 @@
 @property --grid-gap {
     syntax: "<length>";
     inherits: false;
-    initial-value: 10px;
+    initial-value: 2px;
+}
+
+@property --grid-height {
+    syntax: "<length>";
+    inherits: false;
+    initial-value: 90vh;
 }
 
 body {
     padding: 0px;
     margin: 0px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 100vh;
 }
 
 .grid {
     display: flex;
     flex-wrap: wrap;
     aspect-ratio: 1;
-    height: 100vh;
-    padding: 0px;
+    height: var(--grid-height);
+    padding: var(--grid-gap);
     margin: 0px;
-    background-color: red;
+    background-color: black;
     gap: var(--grid-gap);
+    justify-content: space-around;
 }
 
 .grid-element {
-    height: calc((100vh - 15 * var(--grid-gap))/16);
+    height: calc((var(--grid-height) - 17 * var(--grid-gap))/16);
     aspect-ratio: 1;
     padding: 0px;
     margin: 0px;
-    background-color: blue;
+    background-color: white;
 }
